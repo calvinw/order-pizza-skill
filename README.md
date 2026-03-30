@@ -28,11 +28,11 @@ To add or change MCP servers, edit `configs/mcp-urls.conf` — all tools pick it
 
 | Command | What it does |
 |---------|-------------|
-| `/roa-analysis TICKER1 TICKER2 YEAR` | Compare two companies side by side using the ROA DuPont breakdown |
+| `/pizza-ordering` | Start an interactive pizza ordering session as "The Order Technician" |
 
-Example: `/roa-analysis WMT M 2024`
+Example: `/pizza-ordering`
 
-The skill queries the Dolt database for both companies, calculates Net Profit Margin % × Asset Turnover = ROA, and displays a side-by-side table with plain-English interpretation.
+The skill runs a full conversational ordering session — takes the customer's order, tracks a running total, applies tiered discounts, collects contact and delivery info, and displays a final itemized receipt.
 
 ## Getting started
 

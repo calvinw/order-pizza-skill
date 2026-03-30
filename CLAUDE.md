@@ -12,21 +12,22 @@ This codespace connects AI tools to a remote MCP (Model Context Protocol) server
 
 ## Running the Skill
 
-### `/roa-analysis TICKER1 TICKER2 YEAR`
+### `/pizza-ordering`
 
-This skill looks up two companies in the database and compares them side by side using the ROA (Return on Assets) breakdown. ROA is split into two components:
+This skill starts an interactive pizza ordering session. You take on the role of "The Order Technician" — a friendly bot that:
 
-- **Net Profit Margin %** — how much profit a company makes for every dollar of sales
-- **Asset Turnover** — how efficiently a company uses its assets to generate sales
+- Greets the customer and helps them build their order
+- Prompts for size on each item (pizzas, sides, drinks)
+- Lets customers add toppings to pizzas
+- Tracks a running order summary with a live total
+- Collects the customer's name, phone number, and delivery or pickup preference
+- Applies tiered discounts based on order size (and an extra discount for senior citizens)
+- Confirms the final order with full arithmetic shown
 
-Multiply them together and you get **ROA %** — a single number that shows how effectively a company turns its assets into profit.
+**How to run it:** Just type `/pizza-ordering` — no extra arguments needed. It starts a conversation immediately.
 
-**How to run it:** Type `/roa-analysis` followed by two stock tickers and a fiscal year.
-
-Examples:
-- `/roa-analysis WMT M 2024` — compares Walmart and Macy's for fiscal year 2024
-- `/roa-analysis COST TGT 2023` — compares Costco and Target for fiscal year 2023
-- `/roa-analysis WMT COST 2024` — compares Walmart and Costco for fiscal year 2024
+Example:
+- `/pizza-ordering` — begins an ordering session
 
 ---
 
@@ -61,19 +62,18 @@ Every time you run a command or take an action behind the scenes, explain it in 
 - **After the action:** Tell the student what the result means in plain language.
 - **Never show raw data without explanation.** If a query returns numbers, explain what those numbers represent.
 
-### Explaining the ROA Breakdown
+### Explaining the Pizza Ordering Skill
 
-Students understand retail and business — lean on that. When explaining ROA:
+Students are learning how AI tools can be given specific instructions to follow — just like training a new employee. When explaining what the skill does:
 
-- **Net Profit Margin %:** "For every dollar Walmart brings in from sales, how many cents does it actually keep as profit after paying all its bills?"
-- **Asset Turnover:** "For every dollar of stuff Walmart owns (stores, equipment, inventory), how many dollars of sales does it generate?"
-- **ROA:** "Put those two together and you get ROA — a single number that tells you how good a company is at turning what it owns into profit."
-- **DuPont insight:** "Two companies can have the same ROA through completely different strategies — Walmart might get there with razor-thin margins but enormous sales volume, while a specialty retailer might get there with higher margins but slower turnover."
+- **What it is:** "Think of it like handing a new cashier a laminated instruction card. The skill tells the AI exactly how to greet the customer, what the menu is, how to calculate discounts, and how to close out the order."
+- **Why it matters:** "This is a simple example of how businesses use AI to automate customer interactions — the same idea powers chatbots on retail websites."
+- **The discount logic:** "The skill has tiered discounts built in — the bigger your order, the bigger your discount. That's a real pricing strategy used by restaurants and retailers."
 
-### After Every Analysis
+### After Every Ordering Session
 
-After completing an analysis, always provide exactly 3 points:
+After completing an ordering session, always provide exactly 3 points:
 
-1. **What was done** — describe it in plain language.
-2. **Why it matters** — what does this comparison reveal about the two companies?
-3. **What comes next** — what should the student do or think about next?
+1. **What was done** — describe the order and total in plain language.
+2. **Why it matters** — what does this show about how AI can follow structured rules?
+3. **What comes next** — what should the student think about or try next?

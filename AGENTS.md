@@ -9,7 +9,7 @@ This document is the technical reference for agents working in this repository.
 This repository is a minimal working template for a GitHub Codespace that:
 
 1. **Connects every AI tool to a remote MCP server** — via a single shared config file (`configs/mcp-urls.conf`) that all setup scripts read
-2. **Pre-loads a skill across all tools** — via `.skillshare/` so any AI tool can run `/roa-analysis`
+2. **Pre-loads a skill across all tools** — via `.skillshare/` so any AI tool can run `/pizza-ordering`
 3. **Boots automatically** — `.devcontainer/post-create.sh` runs all setup on Codespace start
 
 The design goal is simplicity: one MCP, one skill, all tools wired up from a single source of truth.
@@ -54,26 +54,25 @@ All setup scripts read this file. On the next Codespace boot (or after running `
 
 ## Skill
 
-### `/roa-analysis TICKER1 TICKER2 YEAR`
+### `/pizza-ordering`
 
-**Purpose:** Compare two companies using the DuPont ROA breakdown.
+**Purpose:** Run an interactive pizza ordering session as "The Order Technician".
 
-**Full workflow:** See `.skillshare/skills/roa-analysis/SKILL.md`
+**Full workflow:** See `.skillshare/skills/pizza-ordering/SKILL.md`
 
-**Inputs:**
-- `TICKER1`, `TICKER2` — stock tickers (e.g. `WMT`, `M`, `COST`)
-- `YEAR` — fiscal year as stored in the database (e.g. `2024`)
+**Inputs:** None — just type `/pizza-ordering` to start.
 
 **What it does:**
-1. Queries `company_info` for both tickers to get company names
-2. Queries `financials` for both companies for the given year
-3. Calculates: Net Profit Margin % × Asset Turnover = ROA %
-4. Displays a side-by-side financial summary and ROA breakdown table
-5. Interprets results in plain English
+1. Greets the customer as "The Order Technician"
+2. Takes the order conversationally, prompting for size and toppings
+3. Shows a running order summary after each item
+4. Collects customer name, phone number, and delivery/pickup preference
+5. Applies tiered discounts (and senior discount if applicable)
+6. Displays a final itemized order with full discount arithmetic
 
 **Example:**
 ```
-/roa-analysis WMT M 2024
+/pizza-ordering
 ```
 
 ### Adding More Skills
@@ -87,38 +86,6 @@ Create a new folder under `.skillshare/skills/` with a `SKILL.md` file:
 ```
 
 The `SKILL.md` frontmatter must include `name` and `description`. The `description` is what the AI uses to decide when to invoke the skill.
-
----
-
-## Database Schema
-
-The Dolt database `calvinw/BusMgmtBenchmarks/main` contains:
-
-### `company_info` table
-
-| Field | Notes |
-|-------|-------|
-| company | Exact company name (used as foreign key in financials) |
-| CIK | SEC Central Index Key (NULL for non-US companies) |
-| display_name | Formatted name for display |
-| ticker_symbol | Stock ticker |
-
-### `financials` table
-
-Key fields used by `/roa-analysis` (all dollar values in thousands):
-
-| Field | Notes |
-|-------|-------|
-| company_name | Matches `company_info.company` |
-| year | Fiscal year label (e.g. 2024) |
-| reportDate | Fiscal year-end date (e.g. 2024-01-31) |
-| Net Revenue | Total annual sales |
-| Cost of Goods | Cost of products sold |
-| Gross Margin | Net Revenue − Cost of Goods |
-| SGA | Selling, General & Administrative expenses |
-| Operating Profit | Gross Margin − SGA |
-| Net Profit | Bottom line (can be negative) |
-| Total Assets | Total assets on balance sheet |
 
 ---
 
@@ -204,8 +171,8 @@ bash .devcontainer/post-create.sh
 ├── .skillshare/
 │   ├── config.yaml                    # Skillshare targets (all tools)
 │   └── skills/
-│       └── roa-analysis/
-│           └── SKILL.md               # ROA analysis skill definition
+│       └── pizza-ordering/
+│           └── SKILL.md               # Pizza ordering skill definition
 ├── .devcontainer/
 │   ├── devcontainer.json              # Codespace config
 │   └── post-create.sh                 # Boot orchestrator
@@ -234,6 +201,6 @@ bash .devcontainer/post-create.sh
 - [ ] Read this file (AGENTS.md)
 - [ ] Check `configs/mcp-urls.conf` to confirm which MCP servers are active
 - [ ] Verify MCP tools are available in the session before calling them
-- [ ] Use `/roa-analysis TICKER1 TICKER2 YEAR` to run the ROA comparison skill
+- [ ] Use `/pizza-ordering` to start a pizza ordering session
 - [ ] To add an MCP: add a line to `configs/mcp-urls.conf`, then run `bash .devcontainer/post-create.sh`
 - [ ] To add a skill: create `.skillshare/skills/your-skill/SKILL.md`
