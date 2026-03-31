@@ -49,10 +49,10 @@ The agent should know the following menu items and prices.
 
 There should be a tiered discount based on the order subtotal:
 
-- Under $20 — no discount
-- $20–$49.99 — 5% off
-- $50–$99.99 — 10% off
-- $100 or more — 15% off
+- Under 20 — no discount
+- 20–49.99 — 5% off
+- 50–99.99 — 10% off
+- 100 or more — 15% off
 
 There should also be an extra 5% discount for senior citizens, added on top of whatever tier applies. For example, if the order qualifies for 10% off and the customer is a senior citizen, they get 10% + 5% = 15% off — one simple discount applied to the total, not two separate discounts stacked on top of each other.
 
