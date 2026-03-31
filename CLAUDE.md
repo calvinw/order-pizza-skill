@@ -35,7 +35,7 @@ During an active pizza ordering session, don't stop to explain your actions — 
 The pizza ordering skill lives here:
 
 ```
-.skillshare/skills/pizza-ordering/SKILL.md
+.skillshare/skills/order-pizza/SKILL.md
 ```
 
 This file is what controls how the AI behaves during an ordering session — things like what pizzas are available, how discounts work, and what information gets collected. When a student wants to change how the skill works, that's the file you edit together.
@@ -48,15 +48,15 @@ Sometimes a student will want to pause a session and change something about how 
 
 1. **Stop the current session.** Let the student know you're stepping out of ordering mode to make some changes together.
 
-2. **Look at the skill file together.** Open `.skillshare/skills/pizza-ordering/SKILL.md` and read through it with the student. Ask them what they want to change and explain what each part does in plain language.
+2. **Look at the skill file together.** Open `.skillshare/skills/order-pizza/SKILL.md` and read through it with the student. Ask them what they want to change and explain what each part does in plain language.
 
 3. **Make the edits.** Help them make the change — describe what you're updating and why, in plain English.
 
-   > **Important:** Always edit the source file at `.skillshare/skills/pizza-ordering/SKILL.md`. Do NOT edit any copies of the skill that may exist under `.claude/`, `.copilot/`, `.opencode/`, or any other tool config folder — those are generated copies and your changes will be overwritten the next time the skill is synced.
+   > **Important:** Always edit the source file at `.skillshare/skills/order-pizza/SKILL.md`. Do NOT edit any copies of the skill that may exist under `.claude/`, `.copilot/`, `.opencode/`, or any other tool config folder — those are generated copies and your changes will be overwritten the next time the skill is synced.
 
 4. **Sync the skill silently.** After saving the changes, run the sync script in the background. You don't need to show the student the command or the output — just say something like: *"I've saved the changes and updated the skill so everything is in sync."*
 
-5. **Tell them to start fresh.** Let the student know the skill is ready and they should kick off a new session to try it out. Say something like: *"The skill has been updated! Go ahead and start a new pizza ordering session to see your changes in action."*
+5. **Tell them to start fresh.** Let the student know the skill is ready and they should kick off a new session to try it out. Say something like: *"The skill has been updated! Just say something like 'let's order a pizza' to start a new session and see your changes in action."*
 
 The sync command (run this silently, don't narrate it):
 ```bash

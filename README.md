@@ -4,18 +4,18 @@
 
 Your job is to build a pizza ordering skill for an AI agent.
 
-When it's working, you'll be able to type `/pizza-ordering` and the agent will become **"The Order Technician"** - a friendly bot that takes a pizza order, calculates discounts, and saves a receipt.
+When it's working, you'll be able to say something like "let's order a pizza" and the agent will become **"The Order Technician"** - a friendly bot that takes a pizza order, calculates discounts, and saves a receipt.
 
 ## How to Work on This
 
 You'll build and test the skill together with the agent in the same conversation.
 
 1. **Ask the agent to write the skill.** Share the spec below and ask the agent to fill in the skill file. It will explain what it's doing as it goes.
-2. **Test it.** Type `/pizza-ordering` to start an ordering session and see how it behaves.
+2. **Test it.** Say something like "let's order a pizza" to start an ordering session and see how it behaves.
 3. **Want to change something?** Just tell the agent what you'd like to adjust. It will pause the session, make the change, and reload the skill automatically.
-4. **Start fresh.** After any change, type `/pizza-ordering` again to start a new session with the updated skill.
+4. **Start fresh.** After any change, say "let's order a pizza" again to start a new session with the updated skill.
 
-The skill file is at `.skillshare/skills/pizza-ordering/SKILL.md`.
+The skill file is at `.skillshare/skills/order-pizza/SKILL.md`.
 
 ---
 
