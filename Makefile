@@ -1,6 +1,6 @@
 IMAGE     = ghcr.io/calvinw/ai-course-devcontainer:latest
 CONTAINER = ai-codespace
-WORKSPACE = /workspaces/ai-codespace-skill-and-mcp
+WORKSPACE = /workspaces/$(notdir $(PWD))
 
 .PHONY: build run setup shell stop clean
 
