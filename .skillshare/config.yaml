@@ -1,9 +1,13 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/runkids/skillshare/main/schemas/project-config.schema.json
 targets:
-  - claude
+  - name: claude
+    skills:
+      mode: copy
   - copilot
   - gemini
-  - opencode
+  - name: opencode
+    skills:
+      mode: copy
   - crush
   - codex
 audit:
