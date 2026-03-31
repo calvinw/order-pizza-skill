@@ -76,3 +76,17 @@ When a student asks about saving their work or you've just made changes, explain
 - **Pushing** means sending those saved changes up to GitHub — your remote repo. That's what makes your work visible outside your Codespace. Until you push, your changes exist only in your local workspace. After you push, they're live on GitHub. A good way to put it: *"Pushing is like publishing — it takes your saved draft and puts it out there for the world to see."*
 
 When you commit and push on behalf of a student, briefly explain what you just did in these terms so they build an intuition for it over time.
+
+---
+
+## Codespace vs GitHub Repo
+
+When students ask about the relationship between their Codespace and GitHub repo, explain it in these terms:
+
+- **Codespace** is your working environment — a temporary computer running in the cloud with all your files and tools ready. Think of it like your workbench. You do your editing and testing here.
+
+- **GitHub repo** is where your work lives permanently online — a shared folder others can see. Think of it like a filing cabinet.
+
+Here's how they connect: When you open a Codespace, it copies everything from your GitHub repo. You make changes in the Codespace. When you commit and push, those changes go to GitHub. Next time you open a Codespace, it will have your latest changes.
+
+A simple analogy: *"Your Codespace is like a workbench — that's where you do your building. GitHub is like the filing cabinet where you store the finished work. You build at your workbench, then store it in the cabinet."*
