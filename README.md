@@ -1,49 +1,75 @@
-# ai-codespace-skill-and-mcp
+# Pizza Ordering Skill
 
-A GitHub Codespace template that wires up a remote MCP server and a custom skill across every major AI coding tool — Claude Code, OpenCode, Gemini CLI, Codex, Copilot, and Crush.
+## Your Assignment
 
-## What this does
+Your job is to build a pizza ordering skill for an AI agent.
 
-When you open this Codespace, all AI tools are automatically configured to connect to a shared MCP (Model Context Protocol) server. A single skill is pre-loaded that any tool can run with a slash command.
+When it's working, you'll be able to type `/pizza-ordering` and the agent will become **"The Order Technician"** — a friendly bot that takes a pizza order, calculates discounts, and saves a receipt.
 
-This is a minimal, working example of the pattern. Swap in your own MCP URL and write your own skill to build on top of it.
+Right now the skill file is empty (just a header). You need to fill it in using the spec below.
 
-## AI Tools
+## How to Work on This
 
-All tools are pre-installed and pre-configured:
-Claude Code, OpenCode, Gemini CLI, Codex, Copilot, Crush
-(from [ai-course-devcontainer](https://github.com/calvinw/ai-course-devcontainer))
+Open two terminals side by side. Use one to test the skill by running `/pizza-ordering`, and the other to ask your agent to update the skill file. Your instructor will show you how to do this in class.
 
-## MCP Server
+The skill file is at `.skillshare/skills/pizza-ordering/SKILL.md`.
 
-| Server | Purpose |
-|--------|---------|
-| **dolt** | Read/write the BusMgmtBenchmarks Dolt database |
+---
 
-Endpoint: `https://bus-mgmt-databases.mcp.mathplosion.com/mcp-dolt-database/sse`
+## Skill Spec
 
-To add or change MCP servers, edit `configs/mcp-urls.conf` — all tools pick it up automatically on next boot.
+This describes what the skill needs to do. Give this to your agent and ask it to write the skill.
 
-## Skill
+---
 
-| Command | What it does |
-|---------|-------------|
-| `/pizza-ordering` | Start an interactive pizza ordering session as "The Order Technician" |
+### Menu
 
-Example: `/pizza-ordering`
+The agent should know the following menu items and prices.
 
-The skill runs a full conversational ordering session — takes the customer's order, tracks a running total, applies tiered discounts, collects contact and delivery info, and displays a final itemized receipt.
+**Pizzas** — available in Large, Medium, and Small:
+- Pepperoni pizza: 12.95 / 10.00 / 7.00
+- Cheese pizza: 10.95 / 9.25 / 6.50
+- Eggplant pizza: 11.95 / 9.75 / 6.75
 
-## Getting started
+**Sides:**
+- Fries: Regular 4.50, Small 3.50
+- Greek salad: 7.25
 
-Open in GitHub Codespaces — all tools and MCP connections are set up automatically by `.devcontainer/post-create.sh`.
+**Toppings** (added to any pizza):
+- Extra cheese 2.00, Mushrooms 1.50, Sausage 3.00, Canadian bacon 3.50, Peppers 1.00
 
-## Customizing
+**Drinks** — available in Large, Medium, and Small:
+- Coke: 3.00 / 2.00 / 1.00
+- Sprite: 3.00 / 2.00 / 1.00
+- Bottled water: 5.00
 
-- **Add an MCP server:** Add a line to `configs/mcp-urls.conf` in `name=url` format
-- **Add a skill:** Create a folder under `.skillshare/skills/` with a `SKILL.md` file
+---
 
-## Documentation
+### Discounts
 
-- [AGENTS.md](AGENTS.md) — Technical reference: how MCP setup works, file layout, how to add MCPs and skills
-- [CLAUDE.md](CLAUDE.md) — Claude Code behavior rules and skill usage guide
+There should be a tiered discount based on the order subtotal:
+
+- Under $20 — no discount
+- $20–$49.99 — 5% off
+- $50–$99.99 — 10% off
+- $100 or more — 15% off
+
+There should also be an extra 5% discount for senior citizens, added on top of whatever tier applies. For example, if the order qualifies for 10% off and the customer is a senior citizen, they get 10% + 5% = 15% off — one simple discount applied to the total, not two separate discounts stacked on top of each other.
+
+---
+
+### What the Ordering Session Should Do
+
+The agent should greet the customer as "The Order Technician" and take the order conversationally. There should be a way to see the running total as items are added.
+
+The agent should ask for the customer's name and phone number, and whether they want delivery or pickup. For delivery, it should collect an address.
+
+Before finalizing, the agent should ask whether the customer is a senior citizen, apply the right discount, and show the final total with the math clearly laid out.
+
+There should be a way to see the complete final order — items, sizes, prices, discount applied, and total — before closing out.
+
+---
+
+### Saving the Order
+
+After the session ends, the agent should save a record of the order to the `orders/` folder. The file should start with a summary of the order details at the top, followed by the full conversation transcript. It should also capture the model's thinking process if available.
