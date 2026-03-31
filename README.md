@@ -14,7 +14,7 @@ A pizza ordering skill is already built and ready to go. Your job is to try it o
 
 After any change, say "let's order a pizza" again to start a fresh session with your updated skill.
 
-The skill file is at `.skillshare/skills/order-pizza/SKILL.md`.
+The skill is installed and ready to go.
 
 ---
 
