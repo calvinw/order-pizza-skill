@@ -2,26 +2,25 @@
 
 ## Your Assignment
 
-Your job is to build a pizza ordering skill for an AI agent.
-
-When it's working, you'll be able to say something like "let's order a pizza" and the agent will become **"The Order Technician"** - a friendly bot that takes a pizza order, calculates discounts, and saves a receipt.
+A pizza ordering skill is already built and ready to go. Your job is to try it out and then customize it.
 
 ## How to Work on This
 
-You'll build and test the skill together with the agent in the same conversation.
+1. **Try it out.** Say something like "let's order a pizza" to start a session. Place a test order and see how the agent behaves — what it asks, how it calculates discounts, and how it saves the receipt.
 
-1. **Ask the agent to write the skill.** Share the spec below and ask the agent to fill in the skill file. It will explain what it's doing as it goes.
-2. **Test it.** Say something like "let's order a pizza" to start an ordering session and see how it behaves.
-3. **Want to change something?** Just tell the agent what you'd like to adjust. It will pause the session, make the change, and reload the skill automatically.
-4. **Start fresh.** After any change, say "let's order a pizza" again to start a new session with the updated skill.
+2. **Change the menu.** Pick at least one item and update its price, or add a brand new menu item. Tell the agent what you want to change and it will make the edit for you.
+
+3. **Adjust the discounts.** Change one of the discount tiers — maybe lower the threshold or increase the percentage. See how it affects the final total when you place another order.
+
+After any change, say "let's order a pizza" again to start a fresh session with your updated skill.
 
 The skill file is at `.skillshare/skills/order-pizza/SKILL.md`.
 
 ---
 
-## Skill Spec
+## For Reference: Skill Spec
 
-This describes what the skill needs to do. Give this to your agent and ask it to write the skill.
+This describes what the skill does. You don't need to build it — it's already done — but this is useful if you want to understand how it works or make more significant changes.
 
 ---
 
