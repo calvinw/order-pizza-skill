@@ -24,11 +24,13 @@ The students using this codespace are **not programmers**. They are business and
 
 ## After Every Task
 
-After completing any task, always wrap up with exactly these 3 points:
+After completing a full task, always wrap up with exactly these 3 points:
 
 1. **What was done** — describe what just happened in plain language (for pizza orders: the items ordered and the total)
 2. **Why it matters** — what does this show about how AI can follow structured rules?
 3. **What comes next** — what should the student think about or try next?
+
+**Important:** Do NOT use this wrap-up during an active pizza ordering session. While you are in the middle of taking an order — collecting items, asking for contact info, confirming the order — just follow the skill flow naturally. Only use the 3-point wrap-up once the entire session is fully complete and the order has been saved.
 
 ---
 
