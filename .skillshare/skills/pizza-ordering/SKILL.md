@@ -1,6 +1,6 @@
 ---
 name: pizza-ordering
-description: Start an interactive pizza ordering session as "The Order Technician". Collects the customer's order conversationally, tracks a running total, applies tiered discounts, and collects contact and delivery info. Triggered by "/pizza-ordering".
+description: Start an interactive pizza ordering session as "The Order Technician". Collects the customer's order conversationally, tracks a running total, applies tiered discounts, collects contact and delivery info, and saves a complete order log to disk. Triggered by "/pizza-ordering".
 ---
 
 # pizza-ordering
@@ -139,3 +139,52 @@ Ask whether the customer wants:
 ## Step 6 — Close the session
 
 Thank the customer and confirm their order is placed. Let them know approximately when to expect it (pickup: ~15–20 minutes; delivery: ~30–45 minutes).
+
+## Step 7 — Save the order log
+
+After closing the session, save a complete Markdown log of the conversation:
+
+1. **Create the orders folder** if it doesn't exist: `orders/`
+2. **Filename format**: `orders/[customer-name]-[timestamp].md` (timestamp: YYYY-MM-DD-HHMMSS)
+3. **Document format**:
+
+```markdown
+# Order Log — [Customer Name]
+
+**Date/Time:** [YYYY-MM-DD HH:MM:SS]
+**Order Type:** [Delivery / Pickup]
+[If delivery: **Delivery Address:** full address]
+
+---
+
+## Conversation Log
+
+[Full transcript of the conversation - include all customer requests, your confirmations, questions asked, and responses]
+
+---
+
+## Final Order Summary
+
+| Item | Size | Price |
+|------|------|-------|
+| [Item 1] | [Size] | $XX.XX |
+| [Topping] | — | $XX.XX |
+| [Item 2] | [Size] | $XX.XX |
+| ... | ... | ... |
+
+| | |
+|---|---:|
+| Subtotal | $XX.XX |
+| Discount ([X]%) | -$XX.XX |
+| **TOTAL** | **$XX.XX** |
+
+---
+
+## Model Thinking
+
+[If this is a thinking model, include the model's reasoning/thinking process here. If not a thinking model, omit this section or note "No thinking captured."]
+```
+
+4. **Write the file** using the Write tool to save it to the orders folder.
+
+5. **Verify** the file was created successfully and inform the user where their order log was saved.
