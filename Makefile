@@ -2,7 +2,7 @@ IMAGE     = ghcr.io/calvinw/ai-course-devcontainer:latest
 CONTAINER = ai-codespace
 WORKSPACE = /workspaces/$(notdir $(PWD))
 
-.PHONY: build run setup shell stop clean
+.PHONY: build run setup shell code stop clean
 
 ## Pull image, start container, run setup, drop into shell
 up: build run setup shell
