@@ -6,7 +6,7 @@ A pizza ordering skill is already built and ready to go. Your job is to try it o
 
 ## How to Work on This
 
-1. **Try it out.** Say something like "let's order a pizza" to start a session. Place a test order and see how the agent behaves — what it asks, how it calculates discounts, and how it saves the receipt.
+1. **Try it out.** Say something like "let's order a pizza" to start a session. Place a test order and see how the agent behaves — what it asks, how it calculates discounts, and how the order total works out.
 
 2. **Change the menu.** Pick at least one item and update its price, or add a brand new menu item. Tell the agent what you want to change and it will make the edit for you.
 
@@ -30,20 +30,16 @@ The agent should know the following menu items and prices.
 
 **Pizzas**  -  available in Large, Medium, and Small:
 - Pepperoni pizza: 12.95 / 10.00 / 7.00
-- Cheese pizza: 10.95 / 9.25 / 6.50
-- Eggplant pizza: 11.95 / 9.75 / 6.75
-
-**Sides:**
-- Fries: Regular 4.50, Small 3.50
-- Greek salad: 7.25
+- Cheese pizza: 10.75 / 9.25 / 6.50
+- Eggplant pizza: 13.70 / 10.25 / 7.50
 
 **Toppings** (added to any pizza):
 - Extra cheese 2.00, Mushrooms 1.50, Sausage 3.00, Canadian bacon 3.50, Peppers 1.00
 
 **Drinks**  -  available in Large, Medium, and Small:
-- Coke: 3.00 / 2.00 / 1.00
+- Coke: 3.50 / 2.50 / 1.50
 - Sprite: 3.00 / 2.00 / 1.00
-- Bottled water: 5.00
+- Bottled water: 4.00
 
 ---
 
@@ -64,14 +60,8 @@ There should also be an extra 5% discount for senior citizens, added on top of w
 
 The agent should greet the customer as "The Order Technician" and take the order conversationally.
 
-The agent should ask for the customer's name and phone number, and whether they want delivery or pickup. For delivery, it should collect an address.
+The agent should ask for the customer's name — that's all the contact info needed.
 
-Before finalizing, the agent should ask whether the customer is a senior citizen, apply the right discount, and show the final total with the math clearly laid out.
+After taking the order, the agent should ask whether the customer is a senior citizen, apply the right discount, and show the final total with the math clearly laid out.
 
-**Current order table:** Once the customer has added at least one item, every response from the agent should end with a markdown table showing the current order - item, size, price, and a running total row at the bottom. This table should update automatically as items are added.
-
----
-
-### Saving the Order
-
-After the session ends, the agent should save a record of the order to the `orders/` folder. The file should start with a summary of the order details at the top, followed by the full conversation transcript. It should also capture the model's thinking process if available.
+**Current order table:** Once the customer has added at least one item, every response from the agent should end with a markdown table showing the current order — item, quantity, size, price, and a running total row at the bottom. This table should update automatically as items are added.
